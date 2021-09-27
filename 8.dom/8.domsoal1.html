@@ -108,7 +108,22 @@
     <!-- JavaScript -->
     <script>
         /// EDIT HERE
-        document.getElementById('modal-title').appendChild()
+        const detailTitle = document.getElementById('modal-title')
+        const detailText = document.getElementById('modal-text')
+        const detailImage = document.getElementById('modal-image')
+        const allCard = document.querySelectorAll('.card')
+
+        for (let i = 0; i < allCard.length; i++) {
+            allCard[i].addEventListener("click", function() {
+                const title = document.getElementById(`card-0${i+1}-title`).innerHTML
+                const text = document.getElementById(`card-0${i+1}-text`).innerHTML
+                const image = document.getElementById(`card-0${i+1}-image`).getAttribute('src')
+
+                detailTitle.innerHTML = title
+                detailText.innerHTML = text
+                detailImage.setAttribute('src', image)
+            })
+        }
     </script>
 
     <!-- Bootstrap Bundle with Popper -->

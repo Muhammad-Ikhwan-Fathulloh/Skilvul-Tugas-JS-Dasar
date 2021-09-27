@@ -16,16 +16,16 @@
 /// EDIT HERE
 function taxCalc(salary) {
     if (salary < 5000000) {
-        salary = salary
+        salary = salary * 0
         return salary + " Pajak 0 %"
     } else if (5000000 <= salary < 10000000) {
-        salary = salary + (salary * 0.05)
+        salary = salary * 0.05
         return salary + " Pajak 5 %"
     } else if (10000000 <= salary < 20000000) {
-        salary = salary + (salary * 0.1)
+        salary = salary * 0.1
         return salary + " Pajak 10 %"
     } else if (20000000 <= salary) {
-        salary = salary + (salary * 0.2)
+        salary = salary * 0.2
         return salary + " Pajak 20 %"
     }
 }
@@ -69,7 +69,7 @@ function checkBMI(height, weight) {
     }
 }
 
-console.log(checkBMI(65, 170))
+console.log(checkBMI(190, 120))
 
 
 /// Soal - 03
@@ -105,5 +105,7 @@ console.log(convToUpperCase("ikhwan"))
 
 /// EDIT HERE
 function firstNonRepeatedChar(word) {
-    
+    word.split("")
 }
+
+console.log(firstNonRepeatedChar("ikh wan"))
