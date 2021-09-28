@@ -105,7 +105,13 @@ console.log(convToUpperCase("ikhwan"))
 
 /// EDIT HERE
 function firstNonRepeatedChar(word) {
-    word.split("")
+    if (word.split("") !== word) {
+        return "kata tidak boleh dipisah"
+    } else if (word.includes("ikh wan")) {
+        return ""
+    } else if (word.length()) {
+        return word.charAt(0)
+    }
 }
 
 console.log(firstNonRepeatedChar("ikh wan"))

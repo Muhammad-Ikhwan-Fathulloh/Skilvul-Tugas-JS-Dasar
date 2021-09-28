@@ -128,6 +128,36 @@
         const elBtnCancel = document.querySelector('#btn-cancel');
 
         // EDIT HERE
+        elBtnComment.addEventListener("click", function() {
+            elBtnComment.classList.add('d-none')
+            elCommentSection.classList.remove('d-none')
+        })
+
+        elBtnCancel.addEventListener("click", function() {
+            elBtnComment.classList.remove('d-none')
+            elCommentSection.classList.add('d-none')
+        })
+
+        elCommentForm.addEventListener('submit', function(event) {
+            event.preventDefault()
+            const username = elInputUsername.value
+            const comment = elInputComment.value
+            console.log(username)
+            console.log(comment)
+            const li = document.createElement('li')
+            li.classList.add('list-group-item')
+            li.classList.add('d-flex')
+            li.classList.add('justify-content-between')
+            li.classList.add('align-items-start')
+
+            li.innerHTML = `<div class="ms-2 me-auto">
+                <div class="fw-bold text-capitalize">${username}</div>
+                ${comment}
+            </div>`
+
+            elCommentList.appendChild(li)
+
+        })
     </script>
 </body>
 
